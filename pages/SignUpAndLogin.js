@@ -1,5 +1,4 @@
-
-var signUpAndloginTrell = {
+const signUpAndloginTrell = {
 
     login : function(){
 
@@ -30,5 +29,5 @@ var signUpAndloginTrell = {
 
 }
 
-module.exports= signUpAndloginTrell;
+module.exports = signUpAndloginTrell;
 
