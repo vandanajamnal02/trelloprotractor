@@ -19,9 +19,11 @@ describe('angularjs homepage todo list', function() {
 
     // });
 
-    it('should create a new board', function() {
+    it('should create a new public board', function() {
 
-      Board.createBoard();
+      const boardName = "Vandana Board " + (Math.floor(Math.random() * 9) + 1);
+      const privateBoard = false;
+      Board.createBoard(boardName, privateBoard);
 
     });
 
