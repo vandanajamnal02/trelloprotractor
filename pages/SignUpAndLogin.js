@@ -16,7 +16,15 @@ var signUpAndloginTrell = {
     },
     signUp: function(){
 
-        
+        console.log("will sign up");
+
+        $('a[href^="/signup"]').click();
+        browser.sleep(5000);
+        $("#name").sendKeys("uitester8");
+        $("#email").sendKeys("uitester8@yopmail.com");
+        $("#password").sendKeys("12345678");
+        $("#signup").click();
+        browser.sleep(5000);
 
     }
 

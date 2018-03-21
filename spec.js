@@ -5,9 +5,15 @@ describe('angularjs homepage todo list', function() {
       browser.get('https://trello.com');
     });
 
-    it('login in to trello', function() {
+    // it('login in to trello', function() {
 
-      signUpLogin.login();
+    //   signUpLogin.login();
+
+    // });
+
+    it('should sign up for trello', function() {
+
+      signUpLogin.signUp();
 
     });
 
