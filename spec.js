@@ -2,6 +2,8 @@ const SignUpLogin = require('./pages/SignUpAndLogin');
 const Board = require('./pages/Board');
 const List = require('./pages/listFunctionality');
 
+const ListName = "My Tasks " + (Math.floor(Math.random() * 9) + 1);
+
 
 describe('angularjs homepage todo list', function() {
     it('should add a todo', function() {
@@ -31,9 +33,15 @@ describe('angularjs homepage todo list', function() {
     
     it('Create List',function(){
 
-      const listName = "Task " + (Math.floor(Math.random() * 9) + 1);
+      // const listName = "Task " + (Math.floor(Math.random() * 9) + 1);
 
-      List.createList(listName);
+      List.createList(ListName);
+
+    });
+
+    it('should update a list', function() {
+
+      List.updateList(ListName, "something new");
 
     });
 
