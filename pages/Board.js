@@ -19,6 +19,24 @@ const Board = {
         }
 
         $("form.create-board-form button[type='submit']").click();
+        browser.sleep(5000);
+
+    },
+
+    changeBackground : function(){
+
+        browser.sleep(3000);
+        // click on right sidebar menu button
+        $(".board-header-btns.mod-right").click();
+        browser.sleep(500);
+        // click on Change background option
+        $(".board-menu-navigation-item.mod-background").click();
+        browser.sleep(500);
+        // click on the colors section option
+        $(".board-backgrounds-section-tile.board-backgrounds-colors-tile").click();
+        browser.sleep(500);
+        // click on the first background color option
+        $(".board-menu .board-backgrounds-section-tile").click();
         browser.sleep(3000);
 
     }

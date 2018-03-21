@@ -1,7 +1,6 @@
 const SignUpLogin = require('./pages/SignUpAndLogin');
 const Board = require('./pages/Board');
 const List = require('./pages/listFunctionality');
-const changeBackground = require('./pages/changeBackground');
 
 const ListName = "My Tasks " + (Math.floor(Math.random() * 9) + 1);
 
@@ -47,7 +46,7 @@ describe('angularjs homepage todo list', function() {
     // });
     it('should change background',function(){
 
-      changeBackground.background();
+      Board.changeBackground();
 
     });
 
