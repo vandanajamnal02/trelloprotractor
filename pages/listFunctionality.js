@@ -23,6 +23,7 @@ const listFunctionality = {
             return boardName.getText().then(function (name) {
 
                 console.log("Board name --> ",name);
+                
                 return name === oldName;
             });
 

@@ -5,13 +5,13 @@ const List = require('./pages/listFunctionality');
 const ListName = "My Tasks " + (Math.floor(Math.random() * 9) + 1);
 
 
-describe('angularjs homepage todo list', function() {
-    it('should add a todo', function() {
+describe('Trello End-to-End Testing', function() {
+    it('should visit Trello Homepage', function() {
       browser.get('https://trello.com');
       browser.driver.manage().window().maximize();
     });
 
-    it('login in to trello', function() {
+    it('should login in to trello', function() {
 
       SignUpLogin.login();
 
@@ -23,13 +23,13 @@ describe('angularjs homepage todo list', function() {
 
     // });
 
-    it('should create a new public board', function() {
+    // it('should create a new public board', function() {
 
-      const boardName = "Vandana Board " + (Math.floor(Math.random() * 9) + 1);
-      const privateBoard = false;
-      Board.createBoard(boardName, privateBoard);
+    //   const boardName = "Vandana Board " + (Math.floor(Math.random() * 9) + 1);
+    //   const privateBoard = false;
+    //   Board.createBoard(boardName, privateBoard);
 
-    });
+    // });
     
     // it('Create List',function(){
 
@@ -44,9 +44,38 @@ describe('angularjs homepage todo list', function() {
     //   List.updateList(ListName, "something new");
 
     // });
-    it('should change background',function(){
+    // it('should change background',function(){
 
-      Board.changeBackground();
+    //   Board.changeBackground();
+
+    // });
+
+    // it('should toggle Left and right sidebar', function() {
+
+    //   Board.showRightSidebar();
+    //   Board.hideRightSidebar();
+    //   Board.toggleLeftSidebar();
+
+    // });
+
+    // it('should send invite to add new member to a board', function() {
+
+    //   const email = "ashutosh@akonect.com";
+    //   Board.addMember(email);
+
+    // });
+
+    // it('should toggle favorite status of board', function() {
+
+    //   Board.toggleFavorite();
+
+    // });
+
+    it('should check if board is favorite', function() {
+
+      const boardToValidate = "Vandana Board 1";
+      const isFavorite = Board.validateBoardIsFavorite(boardToValidate);
+      console.log("Board is favorite --> ", isFavorite);
 
     });
 
