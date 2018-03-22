@@ -1,14 +1,15 @@
 const SignUpLogin = require('../pages/SignUpAndLogin');
 const Board = require('../pages/Board');
 const List = require('../pages/listFunctionality');
-
 const ListName = "My Tasks " + (Math.floor(Math.random() * 9) + 1);
 
 
 describe('Trello End-to-End Testing', function() {
+
     it('should visit Trello Homepage', function() {
-      browser.get('https://trello.com');
       browser.driver.manage().window().maximize();
+      browser.get('https://trello.com');
+      
     });
 
     it('should login in to trello', function() {
@@ -23,13 +24,13 @@ describe('Trello End-to-End Testing', function() {
 
     // });
 
-    // it('should create a new public board', function() {
+    it('should create a new public board', function() {
 
-    //   const boardName = "Vandana Board " + (Math.floor(Math.random() * 9) + 1);
-    //   const privateBoard = false;
-    //   Board.createBoard(boardName, privateBoard);
+      const boardName = "Vandana Board " + (Math.floor(Math.random() * 9) + 1);
+      const privateBoard = false;
+      Board.createBoard(boardName, privateBoard);
 
-    // });
+    });
     
     // it('Create List',function(){
 
@@ -39,11 +40,13 @@ describe('Trello End-to-End Testing', function() {
 
     // });
 
-    // it('should update a list', function() {
+    it('should update a list', function() {
 
-    //   List.updateList(ListName, "something new");
+      var oldName = List.createList(ListName);
 
-    // });
+     List.updateList(oldName, "something new");
+
+    });
     // it('should change background',function(){
 
     //   Board.changeBackground();
