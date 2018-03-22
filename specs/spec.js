@@ -56,11 +56,27 @@ describe('Trello End-to-End Testing', function() {
 
 
     // });
-    it('should create card',function() {
+    // it('should create card',function() {
 
+    //   List.createList(ListName);
+    //   Card.createCard(text);
+    // });
+
+    // it('should update card',function() {
+
+    //   List.createList(ListName);
+    //   Card.createCard(text);
+    //   Card.openCard();
+    //   Card.updateCard("Updated Task");
+
+    // });
+    it('should archive card',function(){
       List.createList(ListName);
       Card.createCard(text);
-
+      Card.openCard();
+      Card.updateCard(" Updated Task ");
+      Card.archiveCard();
+      Card.dismissCardWindow();
     });
     // it('should change background',function(){
 
