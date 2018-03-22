@@ -24,7 +24,13 @@ const listFunctionality = {
 
     archiveList: function(){
 
-        
+        browser.sleep(1000);
+        $(".js-open-list-menu").click();
+        browser.sleep(1000);
+        $(".pop-over-content .pop-over-list a.js-close-list").click();
+        browser.sleep(3000);
+
+
 
     }
 

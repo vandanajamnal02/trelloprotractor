@@ -40,11 +40,18 @@ describe('Trello End-to-End Testing', function() {
 
     // });
 
-    it('should update a list', function() {
+    // it('should update a list', function() {
 
-      var oldName = List.createList(ListName);
+    //   var oldName = List.createList(ListName);
 
-     List.updateList(oldName, "something new");
+    //  List.updateList(oldName, "something new");
+
+    // });
+    it('should archive list',function(){
+
+      List.createList(ListName);
+      List.archiveList();
+
 
     });
     // it('should change background',function(){
