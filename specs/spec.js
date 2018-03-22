@@ -2,6 +2,8 @@ const SignUpLogin = require('../pages/SignUpAndLogin');
 const Board = require('../pages/Board');
 const List = require('../pages/listFunctionality');
 const ListName = "My Tasks " + (Math.floor(Math.random() * 9) + 1);
+const Card = require('../pages/cardFunctionality');
+const text = "Some Text" + (Math.floor(Math.random() * 9) + 1);
 
 
 describe('Trello End-to-End Testing', function() {
@@ -47,11 +49,17 @@ describe('Trello End-to-End Testing', function() {
     //  List.updateList(oldName, "something new");
 
     // });
-    it('should archive list',function(){
+    // it('should archive list',function(){
+
+    //   List.createList(ListName);
+    //   List.archiveList();
+
+
+    // });
+    it('should create card',function() {
 
       List.createList(ListName);
-      List.archiveList();
-
+      Card.createCard(text);
 
     });
     // it('should change background',function(){
