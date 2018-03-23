@@ -15,34 +15,41 @@ describe('Trello List Functionality Functionality', function() {
           .window()
           .maximize();
         browser.get(Utils.getBaseUrl());
-      });
+        
+        browser.getCurrentUrl().then(function(actualUrl) {
+            expect(actualUrl).toBe(Utils.getBaseUrl());
+        });
+    });
     
-    it("should login in to trello", function() {
+    it('should login in to trello', function() {
 
-        SignUpLogin.login(Utils.getLoginCredentials());
+        const loginResult = SignUpLogin.login(Utils.getLoginCredentials());
+        expect(loginResult.err).toBe(false);
+    
     });
 
-    it('should create a new public board', function() { 
-
-        Board.createBoard(boardName, privateBoard);
-  
-      });
+    it("should create a new public board", function() {
+        const createResult = Board.createBoard(boardName, privateBoard);
+        expect(createResult.err).toBe(false);
+    });
       
     it('should create a new List',function(){  
 
-        List.createList(ListName);
-
+        const createResult = List.createList(ListName);
+        expect(createResult.err).toBe(false);
     });
 
     it('should update a list', function() {
 
-        List.updateList("something new");
+        const updateResult = List.updateList("something new");
+        expect(updateResult.err).toBe(false);
   
     });
 
     it('should archive list',function(){
   
-        List.archiveList();
+        const archiveResult = List.archiveList();
+        expect(archiveResult.err).toBe(false);
   
     });
 
