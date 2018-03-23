@@ -15,13 +15,23 @@ describe("SignUp and Login Functionality", function() {
   });
 
   it("should signup in to trello", function() {
-    SignUpLogin.signUp(Utils.getSignupCredentials());
-    SignUpLogin.logout();
+    const signupResult = SignUpLogin.signUp(Utils.getSignupCredentials());
+
+    expect(signupResult.err).toBe(false);
+
+    const logoutResult = SignUpLogin.logout();
+
+    expect(logoutResult.err).toBe(false);
+
   });
 
   it("should login in to trello", function() {
-    SignUpLogin.login(Utils.getLoginCredentials());
-    SignUpLogin.logout();
+    const loginResult = SignUpLogin.login(Utils.getLoginCredentials());
+    expect(loginResult.err).toBe(false);
+
+    const logoutResult = SignUpLogin.logout();
+    expect(logoutResult.err).toBe(false);
+
   });
 
 });
