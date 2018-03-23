@@ -26,28 +26,29 @@ describe("Trello Board Functionality", function() {
   it("should send invite to add new member to a board", function() {
     const email = "vandanavs218@gmail.com";
     Board.addMember(email); 
+    Board.hideRightSidebar();
   });
 
-//   it("should change background", function() {
-//     Board.changeBackground();
-//     Board.hideRightSidebar();
-//   });
+  it("should change background", function() {
+    Board.changeBackground();
+    Board.hideRightSidebar();
+  });
 
-//   it("should toggle Left and right sidebar", function() {
-//     Board.showRightSidebar();
-//     Board.hideRightSidebar();
-//     Board.toggleLeftSidebar();
-//     Board.toggleLeftSidebar();
-//   });
+  it("should toggle Left and right sidebar", function() {
+    Board.showRightSidebar();
+    Board.hideRightSidebar();
+    Board.toggleLeftSidebar();
+    Board.toggleLeftSidebar();
+  });
 
-//   it("should toggle favorite status of board", function() {
-//     Board.toggleFavorite();
-//   });
+  it("should toggle favorite status of board", function() {
+    Board.toggleFavorite();
+  });
 
-//   it("should check if board is favorite", function() {
-//     const boardToValidate = "Vandana Board 1";
-//     const isFavorite = Board.validateBoardIsFavorite(boardToValidate);
-//     console.log("Board is favorite --> ", isFavorite);
-//   });
+  it("should check if board is favorite", function() {
+    const boardToValidate = "Vandana Board 1";
+    const isFavorite = Board.validateBoardIsFavorite(boardToValidate);
+    console.log("Board is favorite --> ", isFavorite);
+  });
 
 });
