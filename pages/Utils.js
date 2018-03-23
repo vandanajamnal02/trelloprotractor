@@ -26,6 +26,14 @@ module.exports = {
             email : "uitesterSix@yopmail.com",
             password : "uitest@123"
         };
+    },
+
+    getSignupCredentials: function() {
+        return {
+            username : "uitester12",
+            email : "uitester12@yopmail.com",
+            password : "123456789"
+        };
     }
 
 }

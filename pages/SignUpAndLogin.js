@@ -1,9 +1,7 @@
 const signUpAndloginTrell = {
 
     login : function({ email, password }){
-
-            console.log('trying to login');
-    
+            console.log('trying to login');    
             $('a[href^="/login"]').click();
             browser.sleep(5000);
             $("#user").sendKeys(email);
@@ -13,17 +11,24 @@ const signUpAndloginTrell = {
       
 
     },
-    signUp: function(){
+    signUp: function({ username, email, password }){
 
         console.log("will sign up");
 
         $('a[href^="/signup"]').click();
         browser.sleep(5000);
-        $("#name").sendKeys("uitester8");
-        $("#email").sendKeys("uitester8@yopmail.com");
-        $("#password").sendKeys("12345678");
+        $("#name").sendKeys(username);
+        $("#email").sendKeys(email);
+        $("#password").sendKeys(password);
         $("#signup").click();
         browser.sleep(5000);
+    },
+
+    logout: function() {
+
+        $(".js-open-header-member-menu").click();
+        browser.sleep(500);
+        $(".js-logout").click();
 
     }
 
