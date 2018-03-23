@@ -1,12 +1,7 @@
 exports.config = {
   seleniumAddress: "http://localhost:4444/wd/hub",
   
-  specs: [
-    "./specs/SignUpAndLoginSpec.js",
-    "./specs/BoardSpec.js",
-    "./specs/ListSpec.js",
-    "./specs/CardSpec.js"
-  ],
+  specs: "../specs/BoardSpec.js",
 
   capabilities: {
     browserName: "chrome",
