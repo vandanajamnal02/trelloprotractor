@@ -32,7 +32,7 @@ describe('Trello List Functionality Functionality', function() {
         List.createList(ListName);
 
     });
-    
+
     it('should update a list', function() {
 
         var oldName = List.createList(ListName);

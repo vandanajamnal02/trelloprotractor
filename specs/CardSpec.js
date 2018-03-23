@@ -24,43 +24,36 @@ describe('Trello Card Functionality', function() {
 
     it('should create a new public board', function() {     
         Board.createBoard(boardName, privateBoard);
-  
       });
 
     it('should create card',function() {
-
         List.createList(ListName);
         Card.createCard(text);
     });
   
     it('should update card',function() {
-  
-        List.createList(ListName);
-        Card.createCard(text);
         Card.openCard();
-        Card.updateCard("Updated Task");
+        Card.updateCard(" Updated Task");
+        Card.dismissCardWindow();
   
     });
 
     it('should archive card',function(){
-        List.createList(ListName);
-        Card.createCard(text);
         Card.openCard();
-        Card.updateCard(" Updated Task ");
         Card.archiveCard();
         Card.dismissCardWindow();
     });
 
-    it('should move card from list one to second list',function(){
+    // it('should move card from list one to second list',function(){
 
-        Board.createBoard(boardName, privateBoard);
-        var list1 = List.createList(ListName);
-        var list2 = List.createList(ListName+1);
-        Card.createCard(text);
-        Card.openCard();
-        Card.moveCard(list2);
+    //     Board.createBoard(boardName, privateBoard);
+    //     var list1 = List.createList(ListName);
+    //     var list2 = List.createList(ListName+1);
+    //     Card.createCard(text);
+    //     Card.openCard();
+    //     Card.moveCard(list2);
   
-    });
+    // });
   
 
 });
