@@ -10,24 +10,23 @@ const text = Utils.getRandomCardName();
 
 describe('Trello Card Functionality', function() {
 
-    it("should visit Trello Homepage", function() {
-        browser.driver
-          .manage()
-          .window()
-          .maximize();
-        browser.get(Utils.getBaseUrl());
-      });
+    // it("should visit Trello Homepage", function() {
+    //     browser.driver
+    //       .manage()
+    //       .window()
+    //       .maximize();
+    //     browser.get(Utils.getBaseUrl());
+    //   });
     
-    it("should login in to trello", function() {
-        SignUpLogin.login(Utils.getLoginCredentials());
-    });
+    // it("should login in to trello", function() {
+    //     SignUpLogin.login(Utils.getLoginCredentials());
+    // });
 
-    it('should create a new public board', function() {     
-        Board.createBoard(boardName, privateBoard);
-      });
+    // it('should create a new public board', function() {     
+    //     Board.createBoard(boardName, privateBoard);
+    //   });
 
     it('should create card',function() {
-        List.createList(ListName);
         Card.createCard(text);
     });
   

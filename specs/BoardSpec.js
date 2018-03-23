@@ -23,6 +23,15 @@ describe("Trello Board Functionality", function() {
     Board.createBoard(boardName, privateBoard);
   });
 
+  it("should toggle favorite status of board", function() {
+    Board.toggleFavorite();
+  });
+
+  it("should check if board is favorite", function() {
+    const isFavorite = Board.validateBoardIsFavorite(boardName);
+    console.log("Board is favorite --> ", isFavorite);
+  });
+
   it("should send invite to add new member to a board", function() {
     const email = "vandanavs218@gmail.com";
     Board.addMember(email); 
@@ -39,16 +48,6 @@ describe("Trello Board Functionality", function() {
     Board.hideRightSidebar();
     Board.toggleLeftSidebar();
     Board.toggleLeftSidebar();
-  });
-
-  it("should toggle favorite status of board", function() {
-    Board.toggleFavorite();
-  });
-
-  it("should check if board is favorite", function() {
-    const boardToValidate = "Vandana Board 1";
-    const isFavorite = Board.validateBoardIsFavorite(boardToValidate);
-    console.log("Board is favorite --> ", isFavorite);
   });
 
 });

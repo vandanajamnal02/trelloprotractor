@@ -35,6 +35,7 @@ const Board = {
     validateBoardIsFavorite: function(boardName) {
 
         this.toggleLeftSidebar();
+        browser.sleep(1000);
         const favBoardNames = element.all(by.css(".starred-sidebar-boards-list span.compact-board-tile-link-text-name"));
 
         const requiredBoard = favBoardNames.filter((board) => {

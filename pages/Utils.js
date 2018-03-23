@@ -30,8 +30,8 @@ module.exports = {
 
     getSignupCredentials: function() {
         return {
-            username : "uitester12",
-            email : "uitester12@yopmail.com",
+            username : "uitester16",
+            email : "uitester16@yopmail.com",
             password : "123456789"
         };
     }

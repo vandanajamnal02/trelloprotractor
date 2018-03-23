@@ -5,29 +5,30 @@ const List = require('../pages/listFunctionality');
 const boardName = Utils.getRandomBoardName();
 const privateBoard = false;
 const ListName = Utils.getRandomListName();
+const AnotherListName = Utils.getRandomListName();
 
 describe('Trello List Functionality Functionality', function() {
 
-    it("should visit Trello Homepage", function() {
-        browser.driver
-          .manage()
-          .window()
-          .maximize();
-        browser.get(Utils.getBaseUrl());
-      });
+    // it("should visit Trello Homepage", function() {
+    //     browser.driver
+    //       .manage()
+    //       .window()
+    //       .maximize();
+    //     browser.get(Utils.getBaseUrl());
+    //   });
     
-    it("should login in to trello", function() {
+    // it("should login in to trello", function() {
 
-        SignUpLogin.login(Utils.getLoginCredentials());
-    });
+    //     SignUpLogin.login(Utils.getLoginCredentials());
+    // });
 
-    it('should create a new public board', function() { 
+    // it('should create a new public board', function() { 
 
-        Board.createBoard(boardName, privateBoard);
+    //     Board.createBoard(boardName, privateBoard);
   
-      });
+    //   });
       
-    it('Create List',function(){  
+    it('should create a new List',function(){  
 
         List.createList(ListName);
 
@@ -35,18 +36,22 @@ describe('Trello List Functionality Functionality', function() {
 
     it('should update a list', function() {
 
-        var oldName = List.createList(ListName);
-  
-       List.updateList(oldName, "something new");
+        // List.createList(AnotherListName);  
+        List.updateList("something new");
   
     });
 
     it('should archive list',function(){
   
-        List.createList(ListName);
+        // List.createList(ListName);
         List.archiveList();
   
-  
+    });
+
+    it('should create a new List',function(){  
+
+        List.createList(ListName);
+
     });
 
 });
