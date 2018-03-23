@@ -71,9 +71,7 @@ const Board = {
         //click on board menu in left
         browser.sleep(2000);
         $(".js-boards-menu").click();
-        browser.sleep(500);
-        // $(".js-boards-menu").click();        
-        // browser.sleep(2000);        
+        browser.sleep(500);        
     },
 
 
@@ -95,6 +93,11 @@ const Board = {
 
     addMember: function(email) {
 
+        // Invite new member to sign up, those who are not part of Trello
+
+        // TODO: Check for inviting existing members too
+        // Board.addMember should have that case too
+
         browser.sleep(3000);
         this.showRightSidebar();
         // click on Invite option
@@ -102,8 +105,20 @@ const Board = {
         browser.sleep(500);
         $(".pop-over.is-shown input.js-search-input").sendKeys(email);
         browser.sleep(2000);
-        $(".js-send-email-invite").click();
-        browser.sleep(2000);
+
+        const selectMember = $(".js-select-member");
+
+        selectMember.isPresent().then(function(present) {
+
+            if(present) {
+                selectMember.click();
+            } else {
+                $(".js-send-email-invite").click();
+            }
+
+            browser.sleep(2000);
+
+        });
 
     }
 

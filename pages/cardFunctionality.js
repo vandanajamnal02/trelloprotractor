@@ -36,6 +36,14 @@ const CardFunctionalities = {
 
     browser.sleep(3000);
 
+  },
+  moveCard: function(list2) {
+
+    browser.sleep(1000);
+    $('.js-move-card').click();
+    browser.sleep(3000);
+
+
   }
 };
 module.exports = CardFunctionalities;

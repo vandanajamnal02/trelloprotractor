@@ -1,13 +1,13 @@
 const signUpAndloginTrell = {
 
-    login : function(){
+    login : function({ email, password }){
 
             console.log('trying to login');
     
             $('a[href^="/login"]').click();
             browser.sleep(5000);
-            $("#user").sendKeys("uitesterSix@yopmail.com");
-            $("#password").sendKeys("uitest@123");
+            $("#user").sendKeys(email);
+            $("#password").sendKeys(password);
             $("#login").click();
             browser.sleep(5000);
       
