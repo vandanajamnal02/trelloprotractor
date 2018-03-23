@@ -8,6 +8,10 @@ describe("SignUp and Login Functionality", function() {
       .window()
       .maximize();
     browser.get(Utils.getBaseUrl());
+
+    browser.getCurrentUrl().then(function(actualUrl) {
+        expect(actualUrl).toBe(Utils.getBaseUrl());
+    });
   });
 
   it("should signup in to trello", function() {

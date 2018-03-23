@@ -16,7 +16,12 @@ describe('Trello Card Functionality', function() {
           .window()
           .maximize();
         browser.get(Utils.getBaseUrl());
-      });
+
+        browser.getCurrentUrl().then(function(actualUrl) {
+            expect(actualUrl).toBe(Utils.getBaseUrl());
+        });
+
+    });
     
     it("should login in to trello", function() {
         SignUpLogin.login(Utils.getLoginCredentials());

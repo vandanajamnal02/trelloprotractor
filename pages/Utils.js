@@ -18,7 +18,7 @@ module.exports = {
 
     getBaseUrl: function() {
         
-        return ('https://trello.com');
+        return ('https://trello.com/');
     },
 
     getLoginCredentials: function() {
@@ -30,8 +30,8 @@ module.exports = {
 
     getSignupCredentials: function() {
         return {
-            username : "uitester20",
-            email : "uitester20@yopmail.com",
+            username : "uitester21",
+            email : "uitester21@yopmail.com",
             password : "123456789"
         };
     }

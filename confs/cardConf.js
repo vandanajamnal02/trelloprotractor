@@ -1,4 +1,7 @@
+const Jasmine2HtmlReporter = require('protractor-jasmine2-html-reporter');
+
 exports.config = {
+
     seleniumAddress: "http://localhost:4444/wd/hub",
     
     specs: "../specs/CardSpec.js",
@@ -15,6 +18,12 @@ exports.config = {
     },
     onPrepare: function() {
       browser.ignoreSynchronization = true;
-    }
+        jasmine.getEnv().addReporter(
+          new Jasmine2HtmlReporter({
+            savePath: 'results/cardResults',
+            takeScreenshots: false
+          })
+        );
+     }
   };
   
