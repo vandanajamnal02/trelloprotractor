@@ -24,31 +24,47 @@ describe('Trello Card Functionality', function() {
     });
     
     it("should login in to trello", function() {
-        SignUpLogin.login(Utils.getLoginCredentials());
+        const loginResult = SignUpLogin.login(Utils.getLoginCredentials());
+        expect(loginResult.err).toBe(false)
     });
 
     it('should create a new public board', function() {     
-        Board.createBoard(boardName, privateBoard);
+        const createResult = Board.createBoard(boardName, privateBoard);
+        expect(createResult.err).toBe(false);
     });
 
     it('should create a new List',function(){  
-        List.createList(ListName);
+        const createResult = List.createList(ListName);
+        expect(createResult.err).toBe(false);
     });
 
     it('should create card',function() {
-        Card.createCard(text);
+        const createCardResult = Card.createCard(text);
+        expect(createCardResult.err).toBe(false);
     });
   
     it('should update card',function() {
-        Card.openCard();
-        Card.updateCard(" Updated Task");
-        Card.dismissCardWindow();
+        const openResult = Card.openCard();
+        expect(openResult.err).toBe(false);
+
+        const updateResult = Card.updateCard(" Updated Task");
+        expect(updateResult.err).toBe(false);
+
+        const dismissResult = Card.dismissCardWindow();
+        expect(dismissResult.err).toBe(false);
+
     });
 
     it('should archive card',function(){
-        Card.openCard();
-        Card.archiveCard();
-        Card.dismissCardWindow();
+        const openResult = Card.openCard();
+        expect(openResult.err).toBe(false);
+        
+        const archiveResult = Card.archiveCard();
+        expect(archiveResult.err).toBe(false);
+
+        const dismissResult = Card.dismissCardWindow();
+        expect(dismissResult.err).toBe(false);
+    
     });
 
     // it('should move card from list one to second list',function(){
