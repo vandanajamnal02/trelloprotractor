@@ -10,21 +10,25 @@ const text = Utils.getRandomCardName();
 
 describe('Trello Card Functionality', function() {
 
-    // it("should visit Trello Homepage", function() {
-    //     browser.driver
-    //       .manage()
-    //       .window()
-    //       .maximize();
-    //     browser.get(Utils.getBaseUrl());
-    //   });
+    it("should visit Trello Homepage", function() {
+        browser.driver
+          .manage()
+          .window()
+          .maximize();
+        browser.get(Utils.getBaseUrl());
+      });
     
-    // it("should login in to trello", function() {
-    //     SignUpLogin.login(Utils.getLoginCredentials());
-    // });
+    it("should login in to trello", function() {
+        SignUpLogin.login(Utils.getLoginCredentials());
+    });
 
-    // it('should create a new public board', function() {     
-    //     Board.createBoard(boardName, privateBoard);
-    //   });
+    it('should create a new public board', function() {     
+        Board.createBoard(boardName, privateBoard);
+    });
+
+    it('should create a new List',function(){  
+        List.createList(ListName);
+    });
 
     it('should create card',function() {
         Card.createCard(text);
@@ -34,7 +38,6 @@ describe('Trello Card Functionality', function() {
         Card.openCard();
         Card.updateCard(" Updated Task");
         Card.dismissCardWindow();
-  
     });
 
     it('should archive card',function(){

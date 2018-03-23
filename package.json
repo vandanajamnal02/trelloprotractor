@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "board" : "protractor ./confs/boardConf.js",
-    "list" : "protractor ./confs/listConf.js"
+    "list" : "protractor ./confs/listConf.js",
+    "card" : "protractor ./confs/cardConf.js"
   },
   "repository": {
     "type": "git",
