@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "signup-login" : "protractor ./confs/signUpLoginConf.js",
     "board" : "protractor ./confs/boardConf.js",
     "list" : "protractor ./confs/listConf.js",
     "card" : "protractor ./confs/cardConf.js"
