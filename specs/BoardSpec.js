@@ -11,43 +11,64 @@ describe("Trello Board Functionality", function() {
       .window()
       .maximize();
     browser.get(Utils.getBaseUrl());
+    
+    browser.getCurrentUrl().then(function(actualUrl) {
+        expect(actualUrl).toBe(Utils.getBaseUrl());
+    });
   });
   
   it('should login in to trello', function() {
 
-    SignUpLogin.login(Utils.getLoginCredentials());
+    const loginResult = SignUpLogin.login(Utils.getLoginCredentials());
+    expect(loginResult.err).toBe(false);
 
   });
 
   it("should create a new public board", function() {
-    Board.createBoard(boardName, privateBoard);
+    const createResult = Board.createBoard(boardName, privateBoard);
+    expect(createResult.err).toBe(false);
   });
 
   it("should toggle favorite status of board", function() {
-    Board.toggleFavorite();
+    const favResult = Board.toggleFavorite();
+    expect(favResult.err).toBe(false);
   });
 
   it("should check if board is favorite", function() {
     const isFavorite = Board.validateBoardIsFavorite(boardName);
     console.log("Board is favorite --> ", isFavorite);
+    expect(isFavorite).toBe(true);
   });
 
   it("should send invite to add new member to a board", function() {
     const email = "vandanavs218@gmail.com";
-    Board.addMember(email); 
-    Board.hideRightSidebar();
+    const addMemberResult = Board.addMember(email); 
+    expect(addMemberResult.err).toBe(false);
+    
+    const hideResult = Board.hideRightSidebar();
+    expect(hideResult.err).toBe(false);
   });
 
   it("should change background", function() {
-    Board.changeBackground();
-    Board.hideRightSidebar();
+    const backgroundResult = Board.changeBackground();
+    expect(backgroundResult.err).toBe(false);
+
+    const hideResult = Board.hideRightSidebar();
+    expect(hideResult.err).toBe(false);
   });
 
   it("should toggle Left and right sidebar", function() {
-    Board.showRightSidebar();
-    Board.hideRightSidebar();
-    Board.toggleLeftSidebar();
-    Board.toggleLeftSidebar();
+    const showResult = Board.showRightSidebar();
+    expect(showResult.err).toBe(false);
+
+    const hideResult = Board.hideRightSidebar();
+    expect(hideResult.err).toBe(false);
+
+    const toggleResult = Board.toggleLeftSidebar();
+    expect(toggleResult.err).toBe(false);
+
+    const toggleResult2 = Board.toggleLeftSidebar();
+    expect(toggleResult2.err).toBe(false);
   });
 
 });
